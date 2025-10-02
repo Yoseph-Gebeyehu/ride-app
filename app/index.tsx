@@ -17,6 +17,8 @@ export default function HomeScreen() {
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={styles.container}>
+        <View style={styles.circularContainer1}></View>
+        <View style={styles.circularContainer2}></View>
         <Text style={styles.title}>Welcome back</Text>
         <View style={styles.inputWrapper}>
           <Text style={styles.inputLabel}>Phone number</Text>
@@ -50,6 +52,24 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  circularContainer1: {
+    position: 'absolute',
+    backgroundColor: '#D9D9D95C',
+    width: 200,
+    height: 200,
+    top: -10,
+    right: -30,
+    borderRadius: 200,
+  },
+  circularContainer2: {
+    position: 'absolute',
+    backgroundColor: '#D9D9D9',
+    width: 200,
+    height: 200,
+    top: -20,
+    right: -50,
+    borderRadius: 200,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -66,15 +86,15 @@ const styles = StyleSheet.create({
   },
   inputWrapper: {
     width: '90%',
-    marginBottom: 10,
+    marginBottom: 30,
   },
   forgotPasswordContainer: {
     width: '90%',
     alignItems: 'flex-end',
-    marginBottom: 10,
+    marginBottom: 20,
   },
   forgotPassword: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'gray',
   },
 
@@ -94,6 +114,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '90%',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 40,
   },
 });

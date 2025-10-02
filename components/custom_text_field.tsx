@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   inputContainer: {
     backgroundColor: 'white',
     borderColor: 'gray',
-    borderWidth: 1,
+    borderWidth: 0.4,
     borderRadius: 10,
     padding: 10,
   },
