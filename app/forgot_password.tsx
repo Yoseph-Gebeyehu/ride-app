@@ -6,18 +6,13 @@ import {
     Keyboard,
     StyleSheet,
     Text,
-    TouchableOpacity,
     TouchableWithoutFeedback,
     View,
 } from 'react-native';
 
-export default function LoginScreen() {
+export default function ForgotPasswordScreen() {
   const dismissKeyboard = () => {
     Keyboard.dismiss();
-  };
-
-  const handleSignUp = () => {
-    router.push('/signup');
   };
 
   const handleForgotPassword = () => {
@@ -27,36 +22,19 @@ export default function LoginScreen() {
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={styles.container}>
-        <CustomCircularContainer />
-        <Text style={styles.title}>Welcome back</Text>
+        <View style={styles.circularContainer}>
+          <CustomCircularContainer />
+        </View>
+        <Text style={styles.title}>Forgot password</Text>
         <View style={styles.inputWrapper}>
-          <Text style={styles.inputLabel}>Phone number</Text>
+          <Text style={styles.inputLabel}>Email</Text>
           <CustomTextField
-            placeholder="Enter your phone number"
-            keyboardType="phone-pad"
+            placeholder="Enter your email"
+            keyboardType="email-address"
           />
         </View>
 
-        <View style={styles.inputWrapper}>
-          <Text style={styles.inputLabel}>Password</Text>
-          <CustomTextField
-            placeholder="Enter your password"
-            keyboardType="default"
-          />
-        </View>
-        <View style={styles.forgotPasswordContainer}>
-          <TouchableOpacity onPress={handleForgotPassword}>
-            <Text style={styles.forgotPassword}>Forgot password?</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.signUpContainer}>
-          <Text style={styles.signUp}> Don&apos;t have an account?</Text>
-          <TouchableOpacity onPress={handleSignUp}>
-            <Text style={styles.signUpButton}>Sign up</Text>
-          </TouchableOpacity>
-        </View>
-
-        <CustomButton text="Login" onPress={() => {}} />
+        <CustomButton text="Reset password" onPress={() => {}} />
       </View>
     </TouchableWithoutFeedback>
   );
@@ -68,6 +46,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+  },
+  circularContainer: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 450,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   inputLabel: {
     fontSize: 16,

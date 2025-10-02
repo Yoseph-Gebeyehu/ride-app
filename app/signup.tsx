@@ -11,7 +11,7 @@ import {
     View,
 } from 'react-native';
 
-export default function LoginScreen() {
+export default function SignupScreen() {
   const dismissKeyboard = () => {
     Keyboard.dismiss();
   };
@@ -47,9 +47,7 @@ export default function LoginScreen() {
             keyboardType="default"
           />
         </View>
-        <View style={styles.forgotPasswordContainer}>
-          <Text style={styles.forgotPassword}>Forgot password?</Text>
-        </View>
+
         <View style={styles.signUpContainer}>
           <Text style={styles.signUp}> Already have an account?</Text>
           <TouchableOpacity onPress={handleSignUp}>
@@ -81,15 +79,6 @@ const styles = StyleSheet.create({
   inputWrapper: {
     width: '90%',
     marginBottom: 30,
-  },
-  forgotPasswordContainer: {
-    width: '90%',
-    alignItems: 'flex-end',
-    marginBottom: 20,
-  },
-  forgotPassword: {
-    fontSize: 16,
-    color: 'gray',
   },
 
   signUp: {
