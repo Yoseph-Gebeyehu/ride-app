@@ -4,6 +4,7 @@ import CustomTextField from '@/components/custom_text_field';
 import { router } from 'expo-router';
 import {
   Keyboard,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -26,7 +27,12 @@ export default function LoginScreen() {
 
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
-      <View style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.scrollContent}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
         <CustomCircularContainer />
         <Text style={styles.title}>Welcome back</Text>
         <View style={styles.inputWrapper}>
@@ -57,7 +63,7 @@ export default function LoginScreen() {
         </View>
 
         <CustomButton text="Login" onPress={() => {}} />
-      </View>
+      </ScrollView>
     </TouchableWithoutFeedback>
   );
 }
@@ -65,9 +71,13 @@ export default function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
+  },
+  scrollContent: {
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    paddingVertical: 20,
   },
   inputLabel: {
     fontSize: 16,

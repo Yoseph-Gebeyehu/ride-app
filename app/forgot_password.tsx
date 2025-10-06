@@ -1,13 +1,13 @@
 import CustomButton from '@/components/custom_button';
 import CustomCircularContainer from '@/components/custom_circular_container';
 import CustomTextField from '@/components/custom_text_field';
-import { router } from 'expo-router';
 import {
-    Keyboard,
-    StyleSheet,
-    Text,
-    TouchableWithoutFeedback,
-    View,
+  Keyboard,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 
 export default function ForgotPasswordScreen() {
@@ -15,13 +15,14 @@ export default function ForgotPasswordScreen() {
     Keyboard.dismiss();
   };
 
-  const handleForgotPassword = () => {
-    router.push('/forgot_password');
-  };
-
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
-      <View style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.scrollContent}
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.circularContainer}>
           <CustomCircularContainer />
         </View>
@@ -35,7 +36,7 @@ export default function ForgotPasswordScreen() {
         </View>
 
         <CustomButton text="Reset password" onPress={() => {}} />
-      </View>
+      </ScrollView>
     </TouchableWithoutFeedback>
   );
 }
@@ -43,9 +44,13 @@ export default function ForgotPasswordScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
+  },
+  scrollContent: {
+    flexGrow: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
+    paddingVertical: 20,
   },
   circularContainer: {
     position: 'absolute',
