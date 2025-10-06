@@ -3,12 +3,12 @@ import CustomCircularContainer from '@/components/custom_circular_container';
 import CustomTextField from '@/components/custom_text_field';
 import { router } from 'expo-router';
 import {
-    Keyboard,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    TouchableWithoutFeedback,
-    View,
+  Keyboard,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
 } from 'react-native';
 
 export default function SignupScreen() {
@@ -17,7 +17,7 @@ export default function SignupScreen() {
   };
 
   const handleSignUp = () => {
-    router.push('/login');
+    router.replace('/login');
   };
 
   return (
